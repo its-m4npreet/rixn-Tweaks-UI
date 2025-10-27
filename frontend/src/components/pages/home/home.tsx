@@ -7,12 +7,14 @@ import { MdNetworkCheck, MdOutlineSpeed } from "react-icons/md";
 import { LuTimer } from "react-icons/lu";
 import { AiOutlineAim } from "react-icons/ai";
 import getTestimonials from "../../api/testimonial";
+import gameData from "../../api/data";
 export const Home = () => {
   return (
     <>
     <Intro />
     <Features />
     <Testimonial />
+    <Games/>
     </>
     
   );
@@ -144,6 +146,66 @@ Chosen by elite players and creators for peak performance.
         </div>
       </div>
       )
+    };
+
+    const Games = () => {
+      return (
+        <div className="min-h-screen flex flex-col items-center justify-center bg-[#0a0a0a] text-white px-4  ">
+          <h1 className="text-5xl md:text-5xl font-extrabold text-center mb-2">
+            Tests in Your  <span className="text-[#00dce8]">Favorite Games</span>
+          </h1>
+          {/* Description */}
+          <p className="max-w-[879px] text-center text-2xl text-[#a3aab1] mb-8 ">
+            See the real performance gains with our optimization tweaks
+            <span style={{ lineHeight: 1.7 }}></span>
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">
+            {gameData.map((game) => (
+              <div key={game.name} className="bg-[#121212] rounded-xl p-6 shadow-lg border border-[#232323] hover:border-[#0d5155]">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-[#0f2326] p-2 flex items-center justify-center border border-[#0d5155]">
+                      <img
+                        src={game.logoUrl}
+                        alt={`${game.name} logo`}
+                        className="object-contain w-full h-full block"
+                        width={48}
+                        height={48}
+                        loading="lazy"
+                        onError={(e) => {
+                          const img = e.currentTarget as HTMLImageElement;
+                          console.error('Game logo failed to load:', game.name, game.logoUrl, e);
+                          img.onerror = null;
+                          img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="%231b1b1b"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="9" fill="%2300dce8">GT</text></svg>';
+                        }}
+                        style={{ display: 'block' }}
+                      />
+                    </div>
+                    <h3 className="font-bold text-lg md:text-xl text-white">{game.name}</h3>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="bg-[#00dce8] text-[#081216] font-semibold text-sm px-3 py-1 rounded-full">+{game.percentageIncrease}%</span>
+                  </div>
+                </div>
+
+                <hr className="my-4 border-[#222]" />
+
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[#9fa5ad]">With Tweaks</span>
+                    <span className="text-[#00dce8] font-bold">{game.fpsWithTweaks} FPS</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[#9fa5ad]">Without</span>
+                    <span className="text-[#6b7280] font-semibold">{game.fpsWithout} FPS</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
     };
 
 
