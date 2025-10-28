@@ -62,6 +62,7 @@ transition: all 0.4s ease;
     h1.text-7xl { font-size: 2.25rem; }
     h1.text-5xl { font-size: 1.75rem; }
     .min-h-screen { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+    .intro { padding-top: 2.5rem; padding-bottom: 2.5rem; }
         .tested-on { padding-left: 0.75rem; padding-right: 0.75rem; }
         .hero-btn, .secondary-btn { padding-left: 1rem; padding-right: 1rem; }
         .card { padding: 1rem; }
@@ -74,4 +75,5 @@ transition: all 0.4s ease;
         .tested-on { padding: 0.75rem; }
         .tested-on > div { font-size: 10px; }
     .hero-btn, .secondary-btn { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+    .para{ font-size: 1.125rem; }
 }

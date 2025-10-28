@@ -27,3 +27,23 @@
         transform: translateY(-1px);
         transition: all 0.4s ease;
 }
+
+/* Responsive: mobile menu styles */
+.mobileMenu {
+        padding: 6px 0;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+}
+
+/* make sure the navigation underline effect still works for vertical menu */
+.mobileMenu .navigationlink {
+        padding: 8px 0;
+}
+
+/* small-screen helpers (for projects not using Tailwind's utilities everywhere) */
+@media (max-width: 767px) {
+        .navigationLinks {
+                display: none;
+        }
+}

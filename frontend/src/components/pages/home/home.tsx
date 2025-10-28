@@ -29,32 +29,32 @@ export const Home = () => {
 
 const Intro = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#0a0a0a] text-white px-4 py-[7rem]">
+    <div className="md:min-h-screen flex flex-col items-center justify-center bg-[#0a0a0a] text-white px-4 md:py-[7rem] intro">
       {/* Tagline */}
       <div className="mb-6  ">
         <span className="flex items-center gap-4 px-4 py-2 rounded-full bg-[#121212] text-[#00dce8] border border-[#242424] font-semibold tracking-wide text-xs shadow-md"> <FaStar/>FASTER, SMOOTHER, SHARPER</span>
       </div>
       {/* Main Heading */}
-      <h1 className="text-7xl md:text-6xl font-extrabold text-center mb-2">
+      <h1 className="text-5xl md:text-6xl font-extrabold text-center mb-2">
         Optimize <span className="text-[#00dce8]">your PC</span> for
       </h1>
-      <h2 className="text-7xl md:text-6xl font-extrabold text-center mb-6 ">Gaming</h2>
+      <h2 className="text-5xl md:text-6xl font-extrabold text-center mb-6 ">Gaming</h2>
       {/* Description */}
-      <p className="max-w-[879px] text-center text-2xl text-[#a3aab1] mb-8 ">
+      <p className="max-w-[879px] text-center text-2xl  text-[#a3aab1] mb-8 para ">
     RisxnTweaks removes bloatware and optimizes your PC for higher FPS, lower input delay, and reduced ping. Get smoother gameplay and precision hit registration tweaks for competitive shooters.
     <span style={{ lineHeight: 1.7 }}></span>
       </p>
       {/* Buttons */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
-        <button className="hero-btn bg-[#00dce8] text-[#181818] font-semibold px-5 py-3 rounded-[12px] shadow-lg hover:bg-[#00b6c2] transition-colors flex items-center gap-2">
-          <span className="flex gap-4  items-center"><IoIosSearch /> Explore Services</span>
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6 w-full max-w-2xl">
+        <button className="hero-btn bg-[#00dce8] text-[#181818] font-semibold px-5 py-3 rounded-[12px] shadow-lg hover:bg-[#00b6c2] transition-colors flex items-center gap-2 w-full md:w-auto text-center">
+          <span className="flex gap-4  items-center justify-center w-full"><IoIosSearch /> Explore Services</span>
         </button>
-        <button className="secondary-btn bg-[#181818] border border-[#343434] text-white font-semibold px-8 py-3 rounded-[12px] hover:bg-[#232323] hover:border-[#00c0cb] transition-colors flex items-center gap-2">
-          <span className="flex gap-4 items-center"><BsDownload /> Try For Free</span>
+        <button className="secondary-btn bg-[#181818] border border-[#343434] text-white font-semibold px-8 py-3 rounded-[12px] hover:bg-[#232323] hover:border-[#00c0cb] transition-colors flex items-center gap-2 w-full md:w-auto text-center">
+          <span className="flex gap-4 items-center justify-center w-full"><BsDownload /> Try For Free</span>
         </button>
       </div>
       {/* Features */}
-      <div className="flex flex-col md:flex-row items-center  justify-center gap-4 mb-8 text-[#9fa5ad] text-sm font-bold">
+      <div className="flex flex-row items-center  justify-center gap-4 mb-8 text-[#9fa5ad] text-sm font-bold">
         <span className="text-[#00dce8]">•</span>
         <span className="flex items-center gap-2 "> No Risk <span className="mx-1">•</span>  Free to Test</span>
         <span className="text-[#00dce8]">•</span>
@@ -63,7 +63,7 @@ const Intro = () => {
 
       </div>
       {/* Stats */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-4">
+      <div className="flex flex-row items-center justify-center gap-6 mt-4">
         <div className="button bg-[#121212] rounded-[16px] px-4.5 py-3 flex gap-4 items-center shadow-md border border-[#343434] hover:bg-transparent">         <button className="border  p-2 rounded-md hover:bg-[transparent] border-[#00c0cb] text-[#00c0cb] navigation-shadow transition-colors">
               <FiUser />
             </button>
@@ -156,7 +156,7 @@ Chosen by elite players and creators for peak performance.
 
     const Games = () => {
       return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-[#0a0a0a] text-white px-4  ">
+        <div className="min-h-screen flex flex-col items-center justify-center bg-[#0a0a0a] text-white px-4 py-20 ">
           <h1 className="text-5xl md:text-5xl font-extrabold text-center mb-2">
             Tests in Your  <span className="text-[#00dce8]">Favorite Games</span>
           </h1>
@@ -227,7 +227,7 @@ Chosen by elite players and creators for peak performance.
 
     const MoreQuestions = () => {
       return (
-        <div className="max-w-4xl mx-auto px-4 py-20 mb-4">
+        <div className="max-w-4xl mx-auto px-4 md:py-20 pb-20 mb-4">
           <div className="bg-[#091516] rounded-xl p-10 border border-[#233030] shadow-[0_10px_40px_rgba(0,220,232,0.06)] flex flex-col items-center text-center">
             <div className="w-16 h-16 rounded-full bg-[#00dce8] flex items-center justify-center mb-4 shadow-[0_8px_30px_rgba(0,220,232,0.18)]">
               <FaDiscord className="text-black text-2xl" />
