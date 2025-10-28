@@ -8,6 +8,8 @@ import { LuTimer } from "react-icons/lu";
 import { AiOutlineAim } from "react-icons/ai";
 import getTestimonials from "../../api/testimonial";
 import gameData from "../../api/data";
+import { RiComputerLine } from "react-icons/ri";
+
 export const Home = () => {
   return (
     <>
@@ -162,7 +164,10 @@ Chosen by elite players and creators for peak performance.
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">
             {gameData.map((game) => (
-              <div key={game.name} className="bg-[#121212] rounded-xl p-6 shadow-lg border border-[#232323] hover:border-[#0d5155]">
+              <div
+                key={game.name}
+                className="bg-[#121212] rounded-xl p-6 shadow-lg border border-[#232323] relative overflow-hidden transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,220,232,0.12)] hover:border-[#00dce8]"
+              >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-lg bg-[#0f2326] p-2 flex items-center justify-center border border-[#0d5155]">
@@ -203,6 +208,14 @@ Chosen by elite players and creators for peak performance.
                 </div>
               </div>
             ))}
+            <div className="spaces-content col-span-1 md:col-span-2 lg:col-span-3 flex justify-center">
+              <div className="tested-on bg-[#121212] rounded-[12px] px-4 py-3 flex items-center gap-3 shadow-md border border-[#232323]">
+                <span className="icon bg-transparent  text-xl"><RiComputerLine /></span>
+                <div className="text-[12px] text-[#bfc7cc]">
+                  Tested on <span className="text-white font-semibold">i7 12700KF</span> • <span className="text-white font-semibold">RTX 3070</span> • <span className="text-white font-semibold">32GB DDR4 4000MHz</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       );
