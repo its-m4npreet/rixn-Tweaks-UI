@@ -56,3 +56,22 @@ transition: all 0.4s ease;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
 }
+
+/* Mobile responsive tweaks */
+@media (max-width: 640px) {
+    h1.text-7xl { font-size: 2.25rem; }
+    h1.text-5xl { font-size: 1.75rem; }
+    .min-h-screen { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+        .tested-on { padding-left: 0.75rem; padding-right: 0.75rem; }
+        .hero-btn, .secondary-btn { padding-left: 1rem; padding-right: 1rem; }
+        .card { padding: 1rem; }
+        /* target inner text div of tested-on */
+        .tested-on > div { font-size: 11px; }
+}
+
+/* Slightly larger tap targets for CTA on small screens */
+@media (max-width: 480px) {
+        .tested-on { padding: 0.75rem; }
+        .tested-on > div { font-size: 10px; }
+    .hero-btn, .secondary-btn { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+}

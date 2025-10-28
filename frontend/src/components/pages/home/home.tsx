@@ -1,4 +1,4 @@
-import { FaRegCheckCircle, FaStar } from "react-icons/fa";
+import { FaRegCheckCircle, FaStar, FaDiscord } from "react-icons/fa";
 import { BsDownload } from "react-icons/bs";
 import { IoIosSearch } from "react-icons/io";
 import "./home.css"
@@ -9,16 +9,20 @@ import { AiOutlineAim } from "react-icons/ai";
 import getTestimonials from "../../api/testimonial";
 import gameData from "../../api/data";
 import { RiComputerLine } from "react-icons/ri";
+import { FiArrowUpRight } from "react-icons/fi";
+import { useState } from "react";
+import { HiChevronDown } from "react-icons/hi";
 
 export const Home = () => {
   return (
     <>
-    <Intro />
-    <Features />
-    <Testimonial />
-    <Games/>
+      <Intro />
+      <Features />
+      <Games />
+      <Testimonial />
+      <FAQ />
+      <MoreQuestions />
     </>
-    
   );
 };
 
@@ -220,5 +224,76 @@ Chosen by elite players and creators for peak performance.
         </div>
       );
     };
+
+    const MoreQuestions = () => {
+      return (
+        <div className="max-w-4xl mx-auto px-4 py-20 mb-4">
+          <div className="bg-[#091516] rounded-xl p-10 border border-[#233030] shadow-[0_10px_40px_rgba(0,220,232,0.06)] flex flex-col items-center text-center">
+            <div className="w-16 h-16 rounded-full bg-[#00dce8] flex items-center justify-center mb-4 shadow-[0_8px_30px_rgba(0,220,232,0.18)]">
+              <FaDiscord className="text-black text-2xl" />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">More questions?</h3>
+            <p className="text-[#bfc7cc] max-w-2xl mb-6">
+              Join our discord server, <a href="#" className="text-[#00dce8] font-medium">discord.gg/risxn</a>, feel free to ask us any questions you have!
+            </p>
+            <a href="#" className="inline-flex items-center gap-3 justify-center bg-[#00dce8] text-[#081216] font-semibold px-6 py-3 rounded-[12px] shadow-[0_10px_40px_rgba(0,220,232,0.18)] hover:shadow-[0_18px_70px_rgba(0,220,232,0.24)] transition-all w-full md:w-auto">
+              Join Discord <FiArrowUpRight className="ml-1" />
+            </a>
+          </div>
+        </div>
+      );
+    };
+
+      const FAQ = () => {
+        const faqs = [
+          {
+            q: 'Can this harm my computer?',
+            a: 'No, if anything it increase the longevity of your computer by reducing load and useless background apps.'
+          },
+          {
+            q: 'Is this bannable?',
+            a: 'No you cannot get banned for optimizing your computer.'
+          },
+          {
+            q: 'Are these legit?',
+            a: "Yes these are 100% legit look above for website reviews and join our discord for even more!"
+          },
+          {
+            q: 'Are these worth it?',
+            a: 'Yes, just consider these as a pc upgrade for a fraction of the price.'
+          }
+        ];
+
+        const [open, setOpen] = useState<number | null>(null);
+
+        return (
+          <div className="min-h-screen flex flex-col items-center justify-center bg-[#0a0a0a] text-white px-4 py-12">
+            <h1 className="text-5xl md:text-6xl font-extrabold text-center mb-2">
+              Frequently Asked <span className="text-[#00dce8]">Questions</span>
+            </h1>
+            <p className="max-w-[800px] text-center text-xl text-[#a3aab1] mb-10">Everything you need to know about RisxnTweaks</p>
+
+            <div className="w-full max-w-4xl space-y-4">
+            {faqs.map((f, i) => (
+              <div key={i} className="bg-[#0f0f10] rounded-xl border border-[#232323] transition-all duration-200 group hover:border-[#00dce8]">
+                <button
+                  onClick={() => setOpen(open === i ? null : i)}
+                  className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer transition-colors duration-200 "
+                >
+                  <span className="font-semibold text-white">{f.q}</span>
+                  <span className={`text-[#00dce8] transform transition-transform duration-200 ${open === i ? 'rotate-180' : ''}`}>
+                  <HiChevronDown className="text-xl md:text-2xl" />
+                </span>
+                </button>
+
+                <div className={`px-6 pb-5 text-[#9fa5ad] transition-all duration-300 ${open === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+                  {f.a}
+                </div>
+              </div>
+            ))}
+            </div>
+          </div>
+        );
+      };
 
 

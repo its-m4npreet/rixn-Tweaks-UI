@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./footer.css";
 
 export const Footer = () => (
-  <footer className="bg-[#0f0f0f] text-white pt-12 pb-4 border-t border-[#232323]">
+  <footer className="bg-[#0a0a0a] text-white pt-12 pb-4 border-t border-[#232323]">
     <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row md:justify-between">
       {/* Left Section */}
       <div className="mb-8 md:mb-0 md:w-1/3">
