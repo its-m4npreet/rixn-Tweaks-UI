@@ -66,6 +66,9 @@ PRs are welcome. If you add features, please:
 2. Keep changes small and focused.
 3. Run the dev server and ensure there are no TypeScript errors.
 
+
+Risxn Tweaks 
+
 ## License
 This repository does not include a license file. Add a `LICENSE` if you plan to publish.
 
