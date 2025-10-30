@@ -65,15 +65,3 @@ PRs are welcome. If you add features, please:
 1. Create a branch.
 2. Keep changes small and focused.
 3. Run the dev server and ensure there are no TypeScript errors.
-
-<<<<<<< HEAD
-=======
-
-Risxn Tweaks 
-
-## License
-This repository does not include a license file. Add a `LICENSE` if you plan to publish.
->>>>>>> 194a3fd7b6b483a84eb50090de176bd13c82d0a9
-
----
-If you'd like, I can add a short `CONTRIBUTING.md`, wire Roboto into Tailwind's config for `font-roboto` utilities, or run a quick build check in this workspace.
